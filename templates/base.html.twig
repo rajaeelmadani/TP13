@@ -1,0 +1,31 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>{% block title %} Gestion des étudiants {% endblock %}</title>
+	 </head>
+<body > 
+
+<div class ="flash_info">
+{% for flash in app.flashes("info")%} {{ flash }}{% endfor %}
+</div>
+
+<!--*******************************************************-->
+
+{% block view %}{% endblock %}
+
+<!--*******************************************************-->
+
+<div style="background: yellow; color: black;height:25px;">
+	<a href ="{{path('route_index')}}">Acceuil</a> |
+	<a href ="{{path('route_etudiant_liste')}}">Liste des étudiants</a>|
+	<a href ="{{path('route_etudiant_ajouter')}}">Ajouter un étudiant</a> 
+</div>
+
+<!--*******************************************************-->
+
+<br /><br /><hr /><br />
+<div class="bas">&copy; copyright: SMI6 2020<br />Faculté des Sciences Dhar Mehraz</br>smi6@fsdmfes.ac.ma</div>
+</body>
+</html>

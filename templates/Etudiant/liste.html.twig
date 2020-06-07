@@ -1,0 +1,19 @@
+﻿{% extends "base.html.twig" %}
+{% block title %} {{parent()}} - Liste{% endblock %}
+
+{% block view %}
+	<h1>Liste des étudiants (Total : {{etudiants | length }} ) </h1>
+	<hr /><br /><br />
+	<ol>
+		{% for e in etudiants %}	
+			<li>
+				<a href ="{{path('route_etudiant_detail', {'id': e.id})}}">
+					{{ e.Nom | upper ~ " "  ~ e.Prenom | upper }} 
+				</a>
+			</li>
+		{% endfor %}
+	</ol>
+	<div align="right">
+	| <a href ="{{path('route_etudiant_ajouter')}}">Ajouter un étudiant</a> |
+	</div>
+{% endblock %}

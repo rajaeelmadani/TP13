@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{parent()}} - Détail{% endblock %}
+{% block view %}
+	<h1>Détail de l'étudiant: </h1>
+	<hr /> 
+	<b> id  :     {{ etudiant.id      }}  </b><br />
+	<b> Nom :     {{ etudiant.Nom     }}  </b><br />
+	<b> Prénom :  {{ etudiant.Prenom  }}  </b><br />
+	<b> Note :    {{ etudiant.Note    }}  </b><br />
+	<b> Mention : 
+		{%     if etudiant.Note < 10 %} Ajourné     </b><br />
+		{% elseif etudiant.Note < 12 %} Passable    </b><br />
+		{% elseif etudiant.Note < 14 %} Assez Bien  </b><br />
+		{% elseif etudiant.Note < 16 %} Bien        </b><br />
+		{% else                      %} Très Bien   </b><br />
+		{% endif %}
+	
+	<div align="right">
+		<a href ="{{path('route_etudiant_modifier'  , {'id': etudiant.id} )}}">
+			Modifier un étudiant
+		</a> |
+		<a href ="{{path('route_etudiant_supprimer' , {'id': etudiant.id} )}}">
+			Supprimer un étudiant
+		</a>
+	</div>
+{% endblock %}
+
+

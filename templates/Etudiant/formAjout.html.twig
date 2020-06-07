@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %} {{parent()}} - Ajouter{% endblock %}
+{% block view %}
+	<h1>Ajouter un étudiant</h1>
+	<hr />
+	<pre>
+	<form name = "myForm" action = "" method = "post">
+	<!-- chaque  élément de formulaire à un attribut name -->
+	Entrez le nom:
+	<input  type="text"  name="Nom"  />
+	Entrez le prénom:
+	<input type="text" name="Prenom" />
+	Entrez la Note
+	<input  type="text" name ="Note" />
+	<input type='submit' value='Envoyer' /> <input type='reset'  value='Annuler' />
+	</form>
+	</pre>
+{% endblock %}
